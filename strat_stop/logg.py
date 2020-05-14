@@ -14,6 +14,7 @@ class Logger(object):
         self.logger = logging.getLogger(filename)
         format_str = logging.Formatter(fmt)#设置日志格式
         self.logger.setLevel(self.level_relations.get(level))#设置日志级别
+        # setLevel()方法和日志对象的一样，指明了将会分发日志的最低级别。为什么会有两个setLevel()方法？记录器的级别决定了消息是否要传递给处理器。每个处理器的级别决定了消息是否要分发
         sh = logging.StreamHandler()#往屏幕上输出
         sh.setFormatter(format_str) #设置屏幕上显示的格式
         th = handlers.TimedRotatingFileHandler(filename=filename,when=when,backupCount=backCount,encoding='utf-8')#往文件里写入#指定间隔时间自动生成文件的处理器
