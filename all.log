@@ -1,0 +1,5 @@
+2020-05-13 21:47:16,533 - logg[line:35] - DEBUG: debug
+2020-05-13 21:47:16,533 - logg[line:36] - INFO: info
+2020-05-13 21:47:16,535 - logg[line:37] - WARNING: 警告
+2020-05-13 21:47:16,535 - logg[line:38] - ERROR: 报错
+2020-05-13 21:47:16,535 - logg[line:39] - CRITICAL: 严重
