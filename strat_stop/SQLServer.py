@@ -41,11 +41,11 @@ class SQLServer:
         self.conn.close()
 
 
-# def main():
-#     msg = SQLServer(server="127.0.0.1",user="test",password="Test321",database="TEST")
-#     result = msg.ExecQuery("SELECT TOP 1 Value FROM t_Security_Code WHERE Mobile = '18501007700' ORDER BY InsertTime DESC")
-#     for (Value) in result:
-#         print(Value)
+def main():
+    msg = SQLServer(server="127.0.0.1",user="test",password="Test321",database="TEST")
+    result = msg.ExecQuery("SELECT TOP 1 Value FROM t_Security_Code WHERE Mobile = '18501007700' ORDER BY InsertTime DESC")
+    for (Value) in result:
+        print(Value)
  
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
