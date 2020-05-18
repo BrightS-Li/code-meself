@@ -1,13 +1,16 @@
 from SQLServer import SQLServer
 import configparser
 from logg import Logger
+import os
 
 
 class Config():
     '''连接数据库，读取接口数据'''
     def __init__(self):
         config = configparser.ConfigParser()
-        config.read("strat_stop\conf.ini",encoding='UTF-8')
+        fp_dir = os.getcwd() # 获取exe目录
+        path_conf = os.path.join(fp_dir,"conf.ini") # 拼接配置文件名
+        config.read(path_conf,encoding='UTF-8')
 
         # 登录账号密码
         self.web_user = config.get('server','web_user')
@@ -28,8 +31,9 @@ class Config():
         self.time = config.get("startPlay","time")
         self.counts = config.get('startPlay','counts')
 
-        # 日志打印
-        self.log = Logger('strat_stop\log.txt',level='debug')
+        # 日志打印log
+        path_log = os.path.join(fp_dir,'log.txt')
+        self.log = Logger(path_log,level='debug')
 
 def main():
     sqll = Config().sql
