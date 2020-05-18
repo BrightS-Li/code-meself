@@ -1,5 +1,6 @@
 from ginkgo import Ginkgo
 import time
+import decimal
 
 
 class Test():

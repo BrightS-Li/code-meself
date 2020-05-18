@@ -42,9 +42,20 @@ class Excel():
         # 将得到的excel数据返回进行处理
         return self.list_data
 
+def element_tojson(element):
+    elements = {}
+    # 将元素和接口等信息组成key和value的形式方便进行查询
+    for e in element:
+        elements[e[0]] = {'type':e[1],'url':e[2]}
+    return elements
+
 if __name__ == '__main__':
     file = 'frametest\element\elements.xlsx'
     e = Excel('r',file)
     list_read = e.read()
+
+    # 读出excel表格内容
     for i in list_read:
         print(i)
+    ele = element_tojson(list_read)
+    print(ele['登录接口'])
