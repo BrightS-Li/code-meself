@@ -11,6 +11,7 @@ class Config():
         fp_dir = os.getcwd() # 获取exe目录
         path_conf = os.path.join(fp_dir,"conf.ini") # 拼接配置文件名
         config.read(path_conf,encoding='UTF-8')
+        # config.read('strat_stop\conf.ini',encoding='UTF-8')
 
         # 登录账号密码
         self.web_user = config.get('server','web_user')
