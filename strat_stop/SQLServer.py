@@ -42,8 +42,8 @@ class SQLServer:
 
 
 def main():
-    msg = SQLServer(server="127.0.0.1",user="test",password="Test321",database="TEST")
-    result = msg.ExecQuery("SELECT TOP 1 Value FROM t_Security_Code WHERE Mobile = '18501007700' ORDER BY InsertTime DESC")
+    msg = SQLServer(server="192.168.3.61",user="root",password="tuners2012",database="tuenrs_agent")
+    result = msg.ExecQuery("SELECT * FROM `sys_role`")
     for (Value) in result:
         print(Value)
  

@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # _*_ coding:utf-8 _*_
 __author__ = 'YinJia'
 
@@ -16,4 +15,3 @@ TARGET_FILE = os.path.join(BASE_DIR,"report","excelReport","DemoAPITestCase.xlsx
 TEST_REPORT = os.path.join(BASE_DIR,"report")
 # 测试用例程序文件
 TEST_CASE = os.path.join(BASE_DIR,"testcase")
-
