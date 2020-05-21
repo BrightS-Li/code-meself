@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gbk"?>
+	<testsuites>
+		<testsuite errors="2" failures="0" hostname="seautotest" name="API" skipped="" tests="1" time="2.028522" timestamp="2020-05-21T10:27:53.060327">
+			<testcase name="获取短信验证码并注册" priority="M" time="2.027522">
+				<failure message="testdot:获取验证码功能验证 - step:1 - element:获取短信验证码 - error:HTTPConnectionPool(host='127.0.0.1', port=8888): Max retries exceeded with url: /index (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x04403ED0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))" type="Failure"/>
+				<failure message="testdot:注册接口验证 - step:2 - element:注册接口 - error:HTTPConnectionPool(host='127.0.0.1', port=8888): Max retries exceeded with url: /index (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x048110F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))" type="Failure"/>
+			</testcase>
+		</testsuite>
+	</testsuites>
