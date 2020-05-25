@@ -1,6 +1,6 @@
 import os,sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-import setting
+from config import setting
 import configparser as conf
 from pymysql import connect,cursors
 from pymysql.err import OperationalError
@@ -35,7 +35,7 @@ class DB:
 
     # 清除表数据
     def clear(self,table_name):
-        real_sql = 'delete form' + table_name + ';'
+        real_sql = 'delete from ' + table_name + ';'
         with self.conn.cursor() as cursor:
             # 取消表的外键约束
             cursor.execute('SET FOREIGN_KEY_CHECKS=0;')
@@ -49,7 +49,6 @@ class DB:
         key   = ','.join(table_data.keys())
         value = ','.join(table_data.values())
         real_sql = "INSERT INTO " + table_name + " (" + key + ") VALUES (" + value + ")"
-        print(real_sql)
 
         with self.conn.cursor() as cursor:
             cursor.execute(real_sql)
