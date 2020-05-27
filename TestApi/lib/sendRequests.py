@@ -7,7 +7,7 @@ class SendRequests():
         try:
             # 从读取的表格中获取想要的参数作为传递
             method = apiData['method']
-            url = 'http://192.168.3.61:8082/' + apiData['url']
+            url = 'http://127.0.0.1:8899/' + apiData['url']
             print(url)
             if apiData['params'] == '':
                 par = None
