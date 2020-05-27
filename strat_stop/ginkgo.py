@@ -58,7 +58,7 @@ class Ginkgo(Config):
 
 
         r = requests.post(url = url,data = data,cookies = cookie,headers = header)
-        #return r.json
+        print(r.json())
         if r.text[11] == "1":
             self.log.logger.info("-----------------------------开播成功-----------------------------")
         elif r.text[11] == "2":

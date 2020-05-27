@@ -7,7 +7,8 @@ class SendRequests():
         try:
             # 从读取的表格中获取想要的参数作为传递
             method = apiData['method']
-            url = apiData['url']
+            url = 'http://192.168.3.61:8082/' + apiData['url']
+            print(url)
             if apiData['params'] == '':
                 par = None
             else:
@@ -35,19 +36,20 @@ class SendRequests():
 
             # 发送请求
             re = s.request(method = method,url = url,headers =h,params=par,data=body,verify=v)
+            # print(re)
             return re
         except Exception as e:
             print(e)
 
 
 
-from config import setting
-from readexcel import ReadExcel
-import requests
-def main():
-    s = requests.session()
-    test_data = ReadExcel(setting.SOURCE_FILE,'Sheet2').read_data()
-    SendRequests().sendRequests(s,test_data)
-
-if __name__ == "__main__":
-    main()
+# from config import setting
+# from readexcel import ReadExcel
+# import requests
+# def main():
+#     s = requests.session()
+#     test_data = ReadExcel(setting.SOURCE_FILE,'Sheet2').read_data()
+#     SendRequests().sendRequests(s,test_data)
+    
+# if __name__ == "__main__":
+#     main()

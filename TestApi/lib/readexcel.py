@@ -1,4 +1,7 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 import xlrd
+from config import setting
 
 class ReadExcel():
     '''读取Excel文件数据'''
@@ -13,7 +16,7 @@ class ReadExcel():
     def read_data(self):
         if self.nrows > 1:
             # 获取第一行的内容，列表格式
-            print(self.table)
+            # print(self.table)
             keys = self.table.row_values(0)
             listApiData = []
             # 获取每一行的内容，列表格式
@@ -22,6 +25,7 @@ class ReadExcel():
                 # keys,values组合转换为字典
                 api_dict = dict(zip(keys,values))
                 listApiData.append(api_dict)
+                # print(listApiData)
             return listApiData
         else:
             print("表格是空数据")
@@ -29,4 +33,4 @@ class ReadExcel():
 
 
 if __name__ == "__main__":
-    ReadExcel('E:\Dev\github\code-meself\TestApi\database\DemoAPITestCase.xlsx',SheetName = 'Sheet2').read_data()
+    ReadExcel(setting.SOURCE_FILE,SheetName = 'Sheet2').read_data()

@@ -53,6 +53,15 @@ class DB:
         with self.conn.cursor() as cursor:
             cursor.execute(real_sql)
         self.conn.commit()
+    
+    # 查询数据
+    def select(self,select_sql):
+        with self.conn.cursor() as cursor:
+            cursor.execute(select_sql)
+            select_end = cursor.fetchall()
+        self.conn.commit()
+        return select_end
+        
 
     # 关闭数据库
     def close(self):
