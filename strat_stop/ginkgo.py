@@ -9,14 +9,14 @@ class Ginkgo(Config):
     def Kaibo(self):
 
         # 登录
-        url = "http://" + self.ip + ":8082/userAction_login.action"
+        urll = "http://" + self.ip + ":8082/userAction_login.action"
         header = {"Accept":"application/json"}
         data = {"loginName":self.web_user,"password":self.web_password}
-        r = requests.post(url,data=data,headers=header)
+        r = requests.post(urll,data=data,headers=header)
 
         # 保存cookie
-        session = requests.Session()
-        cookie_jar = session.post(url,data)
+        sessionn = requests.Session()
+        cookie_jar = sessionn.post(urll,data)
         cookie = requests.utils.dict_from_cookiejar(cookie_jar.cookies)
         # print(cookie)
         # print(cookie_jar.headers)
@@ -56,8 +56,8 @@ class Ginkgo(Config):
         # data['areaIds'] = input("请输入区域areaIds:")
 
 
-
-        r = requests.post(url = url,data = data,cookies = cookie,headers = header)
+        r = sessionn.request(method = 'post',url = url,data = data,headers = header)
+        # r = requests.post(url = url,data = data,cookies = cookie,headers = header)
         print(r.json())
         if r.text[11] == "1":
             self.log.logger.info("-----------------------------开播成功-----------------------------")

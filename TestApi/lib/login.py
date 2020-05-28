@@ -14,6 +14,8 @@ class Login():
 
         # 保存cookie
         session = requests.Session()
+        cookie_jar = session.post(url,data)
+        cookie = requests.utils.dict_from_cookiejar(cookie_jar.cookies)
         return session
         
 if __name__ == "__main__":

@@ -3,3 +3,101 @@
 2020-05-27 17:26:50,591 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
 2020-05-27 17:27:09,240 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
 2020-05-27 17:30:29,619 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
+2020-05-28 10:38:44,334 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
+2020-05-28 10:41:36,278 - ginkgo[line:67] - WARNING: 查看打印信息
+
+
+
+
+
+
+
+
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="/style/new/project.css" type=text/css rel=stylesheet />
+	<link href="/style/new/chosen.css" type=text/css rel=stylesheet />
+	
+	
+	<script src="/script/new/jquery-3.1.1.min.js"></script>
+	<script src="/script/new/plugins/layer/layer.js?t=2"></script>
+	<script src="/script/new/plugins/select/chosen.jquery.js?t=2"></script>
+	<script src="/script/new/common.js"></script>
+	
+</head>
+<script>
+top.menuIndex = "" || top.menuIndex;
+$(function(){
+	$('.customSelect:visible').chosen({disable_search_threshold:10,allow_single_deselect:true});
+})
+var w1300 = "" || "1300",
+	w900 = "" || "900",
+	w700 = "" || "700",
+	w400 = "" || "400",
+ 	h400 = "" || "400",
+ 	h500 = "" || "500",
+ 	h600 = "" || "600",
+ 	h700 = "" || "700";
+</script>
+
+ 
+
+
+<script>
+// window.onload = function(){
+// 	 setTimeout("history.back()", 5000);
+// }
+
+var start = 5;
+var step = -1;
+function count()
+{
+//	document.getElementById("goTime").innerHTML = start;
+	$("#goTime").text(start);
+	start += step;
+	
+	if(start < 0){
+		setTimeout("layer.close()");
+		 
+	}
+	setTimeout("count()",1000);
+}
+window.onload = count();
+</script>
+
+<body class="chunk chunk-4"> 
+
+<!-- 标题显示 -->
+<!-- 	<div class="title"> 系统运行错误</div> -->
+<!--显示表单内容-->
+<div class="main mt50">
+	<div class="deviceImg tc">
+		<ul>
+			<li>
+				<img src="/style/images/comm/navigation/2203.gif" />
+			</li>
+		</ul>
+	</div>
+	<div class="detail tc mt30">
+		   
+	    	<p><a href="javascript:top.historyGo(-1);">对不起， 该区域不存在，页面将在<span id="goTime">5</span>秒后返回</a></p>   
+		   
+		   
+		
+	</div>
+	
+  
+</div>
+
+</body>
+</html>
+
+2020-05-28 10:42:14,592 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
+2020-05-28 11:22:00,567 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
+2020-05-28 11:22:11,675 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
+2020-05-28 11:23:25,886 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
+2020-05-28 11:56:26,899 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
+2020-05-28 11:57:17,317 - ginkgo[line:63] - INFO: -----------------------------开播成功-----------------------------
