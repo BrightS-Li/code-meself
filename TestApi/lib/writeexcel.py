@@ -43,7 +43,7 @@ class WriteExcel():
             self.ws.cell(row_n,12,value)
             self.ws[L_n].font = font_RED
         self.ws.cell(row_n,13,name)
-        self.ws[L_n].Alignment = align
+        self.ws[L_n].alignment = align
         self.ws[M_n].font = font1
         self.ws[M_n].alignment = align
         self.wb.save(self.filename)
