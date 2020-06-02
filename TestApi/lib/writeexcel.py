@@ -13,6 +13,7 @@ name = cf.get('tester','name')
 class WriteExcel():
     '''文件写入数据'''
     def __init__(self,filename):
+        print(filename)
         self.filename = filename
         if not os.path.exists(self.filename):
             # 文件不存在，则拷贝文件至指定报告目录下
@@ -36,12 +37,14 @@ class WriteExcel():
         L_n = 'L' + str(row_n)
         M_n = 'M' + str(row_n)
 
-        if value == 'pass':
+
+        if value == 'PASS':
             self.ws.cell(row_n,12,value)
             self.ws[L_n].font = font_GREEN
         if value == 'FAIL':
             self.ws.cell(row_n,12,value)
             self.ws[L_n].font = font_RED
+
         self.ws.cell(row_n,13,name)
         self.ws[L_n].alignment = align
         self.ws[M_n].font = font1
@@ -49,3 +52,5 @@ class WriteExcel():
         self.wb.save(self.filename)
 
 
+if __name__ == "__main__":
+    WriteExcel(setting.SOURCE_FILE).write_data(2,'PASS')
