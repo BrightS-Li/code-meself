@@ -27,6 +27,7 @@ class Demo_API(unittest.TestCase):
 
     @ddt.data(*testData)
     def test_api(self,data):
+        '''开播测试'''
         # 获取id字段数值，截取结尾数字并去掉开头0
         rowNum = int(data['ID'].split("_")[2])
         # print(data)
@@ -39,11 +40,9 @@ class Demo_API(unittest.TestCase):
         readData_msg = data['msg']
         if readData_code == self.result['status']:
             OK_data = 'PASS'
-            print(OK_data)
             WriteExcel(setting.SOURCE_FILE).write_data(rowNum + 1,OK_data)
         if readData_code != self.result['status']:
             NOT_data = 'FAIL'
-            print(NOT_data)
             WriteExcel(setting.SOURCE_FILE).write_data(rowNum + 1,NOT_data)
         
         self.assertEqual(self.result['status'],readData_code,'返回实际结果->:%s' % self.result['status'])

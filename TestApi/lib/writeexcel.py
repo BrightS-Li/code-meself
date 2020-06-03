@@ -13,7 +13,6 @@ name = cf.get('tester','name')
 class WriteExcel():
     '''文件写入数据'''
     def __init__(self,filename):
-        print(filename)
         self.filename = filename
         if not os.path.exists(self.filename):
             # 文件不存在，则拷贝文件至指定报告目录下
