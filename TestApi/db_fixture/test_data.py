@@ -3,7 +3,7 @@ __author__ = 'YinJia'
 
 import sys, time, os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from mysql_db import DB
+from db_fixture.mysql_db import DB
 
 # 定义过去时间
 past_time = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()-100000))

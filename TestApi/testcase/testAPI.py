@@ -28,13 +28,14 @@ class Demo_API(unittest.TestCase):
     @ddt.data(*testData)
     def test_api(self,data):
         '''开播测试'''
-        # 获取id字段数值，截取结尾数字并去掉开头0
-        rowNum = int(data['ID'].split("_")[2])
+        # 获取id字段数值，截取结尾数字并去掉开头
+        rowNum = int(data['ID'].split("_")[1])
         # print(data)
         # 发送请求
         r = SendRequests().sendRequests(self.s,data)
         # 获取服务端返回的值
         self.result = r.json()
+        print(self.result)
         # 获取excel表格数据
         readData_code = data['status_code']
         readData_msg = data['msg']
@@ -46,10 +47,7 @@ class Demo_API(unittest.TestCase):
             WriteExcel(setting.SOURCE_FILE).write_data(rowNum + 1,NOT_data)
         
         self.assertEqual(self.result['status'],readData_code,'返回实际结果->:%s' % self.result['status'])
-        #self.assertEqual(self.result['message'],readData_code,'返回实际结果->:%s' % self.result['message'])
-
-
-
+        # self.assertEqual(self.result['message'],readData_code,'返回实际结果->:%s' % self.result['message'])
     
 if __name__ == "__main__":
     unittest.main()
