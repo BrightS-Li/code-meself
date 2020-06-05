@@ -30,6 +30,7 @@ def login():
 
         else:
             resu = {'code':-1,'message':'failure'}
+            return json.dumps(resu,ensure_ascii=False)
     else:
         resu = {'code':10001,'message':'param is none'}
         return json.dumps(resu,ensure_ascii=False)
