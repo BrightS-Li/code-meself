@@ -3,6 +3,15 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__))) # 本文件加入环
 from configFile import filedir
 
 class ReadExcel():
+    """
+    读取测试用例excel中的sheet.
+
+    :file_excel:   测试用例excel
+
+    :sheet_name:   测试用例表格
+
+    例：(filedir.TEXT_EXCEL,'Sheet1')
+    """
     def __init__(self,file_excel,sheet_name):
         self.data = xlrd.open_workbook(file_excel) # 打开excel文件
         self.table = self.data.sheet_by_name(sheet_name) # 通过名字获取表
@@ -43,6 +52,7 @@ class ReadExcel():
         return data_list
 
 if __name__ == "__main__":
-    ReadExcel(filedir.TEXT_EXCEL,'Sheet1').get_excel()
+    A = ReadExcel(filedir.TEXT_EXCEL,'Sheet1').get_excel()
+    print(A)
 
 

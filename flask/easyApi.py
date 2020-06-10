@@ -29,10 +29,10 @@ def login():
             return json.dumps(resu,ensure_ascii=False)
 
         else:
-            resu = {'code':-1,'message':'failure'}
+            resu = {'code':-1,'message':'用户名或密码不正确'}
             return json.dumps(resu,ensure_ascii=False)
     else:
-        resu = {'code':10001,'message':'param is none'}
+        resu = {'code':10001,'message':'用户名或密码为空'}
         return json.dumps(resu,ensure_ascii=False)
 
 # 启动服务，默认端口号是5000
