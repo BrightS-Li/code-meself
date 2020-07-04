@@ -4,8 +4,6 @@ import pytest
 # def test():
 #     print("fixture初始化的参数列表")
 
-import pytest
-
 '''=========================fixture名字作为用例的参数====================================='''
 # fixture的名字直接作为测试用例的参数
 @pytest.fixture()
@@ -48,4 +46,4 @@ def everydef():
 
 
 if __name__ == "__main__":
-    pytest.main(['-q','-s','fixturetest.py'])
+    pytest.main(['-q','-s','fixtureCanShu.py'])

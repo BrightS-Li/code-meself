@@ -1,4 +1,7 @@
 import pytest
+import os
+path = os.path.join(os.path.dirname(__file__),(__file__)) # 获取当前文件的绝对路径
+
 
 
 def setup_module():
@@ -52,4 +55,4 @@ class TestCase():
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "-s", "-ra", "setup_setdown.py"])
+    pytest.main(["-q", "-s", "-ra", path])

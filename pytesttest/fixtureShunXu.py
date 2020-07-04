@@ -1,4 +1,6 @@
 import pytest
+import os
+path = os.path.join(os.path.dirname(__file__),(__file__)) # 获取当前文件的绝对路径
 
 '''setup顺序执行'''
 @pytest.fixture(scope='module', autouse=True)
@@ -39,4 +41,4 @@ class TestFixture2(object):
         print('\n我是class2里面的test5')
 
 if __name__ == "__main__":
-    pytest.main(['-q','-s','fixtureShunXu.py'])
+    pytest.main(['-q','-s',path])

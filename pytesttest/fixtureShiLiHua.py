@@ -1,4 +1,6 @@
 import pytest
+import os
+path = os.path.join(os.path.dirname(__file__),(__file__)) # 获取当前文件的绝对路径
 
 '''fixture的实例化顺序'''
 
@@ -44,4 +46,4 @@ def test_order(f1, m1, f2, s1):
     assert order == ["s1", "m1", "f3", "a1", "f1", "f2"]
 
 if __name__ == "__main__":
-    pytest.main(['-q','-s','fixtureShiLiHua.py',])
+    pytest.main(['-q','-s',path,])
